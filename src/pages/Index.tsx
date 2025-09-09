@@ -1,7 +1,6 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
-import AutomationGrid from "@/components/AutomationGrid";
-import CallToActionSection from "@/components/CallToActionSection";
+import ProblemFraming from "@/components/sections/ProblemFraming";
 
 const Index = () => {
   return (
@@ -9,8 +8,7 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
-        <AutomationGrid />
-        <CallToActionSection />
+        <ProblemFraming />
       </main>
     </div>
   );
