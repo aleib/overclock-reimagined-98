@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
-import VideoSection from "@/components/sections/VideoSection";
 import ProblemFraming from "@/components/sections/ProblemFraming";
 
 const Index = () => {
@@ -9,7 +8,6 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
-        <VideoSection />
         <ProblemFraming />
       </main>
     </div>
