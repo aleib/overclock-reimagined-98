@@ -1,6 +1,16 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import ProblemFraming from "@/components/sections/ProblemFraming";
+import SolutionOverview from "@/components/sections/SolutionOverview";
+import HowItWorks from "@/components/sections/HowItWorks";
+import UseCases from "@/components/sections/UseCases";
+import SocialProof from "@/components/sections/SocialProof";
+import Differentiation from "@/components/sections/Differentiation";
+import TeamCredibility from "@/components/sections/TeamCredibility";
+import Pricing from "@/components/sections/Pricing";
+import FAQ from "@/components/sections/FAQ";
+import FinalCTA from "@/components/sections/FinalCTA";
+import Footer from "@/components/sections/Footer";
 
 const Index = () => {
   return (
@@ -8,8 +18,17 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
-        <ProblemFraming />
+        <SolutionOverview />
+        <HowItWorks />
+        <UseCases />
+        <SocialProof />
+        <Differentiation />
+        <TeamCredibility />
+        <Pricing />
+        <FAQ />
+        <FinalCTA />
       </main>
+      <Footer />
     </div>
   );
 };
