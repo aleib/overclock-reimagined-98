@@ -1,7 +1,7 @@
 const VideoSection = () => {
   return (
-    <section className="relative bg-background/95 backdrop-blur-sm border-t border-border/50">
-      <div className="max-w-6xl mx-auto px-6 py-16">
+    <section className="relative bg-card/30 backdrop-blur-sm">
+      <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-foreground mb-4">
             See Overclock in Action
@@ -11,8 +11,8 @@ const VideoSection = () => {
           </p>
         </div>
         
-        <div className="relative max-w-4xl mx-auto">
-          <div className="aspect-video rounded-xl overflow-hidden shadow-elegant border border-border/20">
+        <div className="relative max-w-4xl mx-auto animate-fade-in">
+          <div className="aspect-video rounded-xl overflow-hidden shadow-elegant border border-primary/10 bg-card/50">
             <iframe
               width="100%"
               height="100%"
