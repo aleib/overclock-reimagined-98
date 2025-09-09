@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center grid-pattern">
+    <section className="relative h-[90vh] flex items-center justify-center grid-pattern">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
       
       <div className="relative max-w-5xl mx-auto px-6 text-center">
