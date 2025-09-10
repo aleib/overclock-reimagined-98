@@ -14,12 +14,12 @@ export function DesignPartnerSection() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto"
         >
-          <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg p-8 lg:p-12 text-center shadow-lg border border-accent/30">
+          <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg p-8 lg:p-12 text-center shadow-lg border border-primary/20">
             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
               <Sparkles className="w-8 h-8 text-primary-foreground" />
             </div>
             
-            <div className="inline-block bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-block bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold mb-4">
               LIMITED OFFER
             </div>
             
@@ -34,7 +34,7 @@ export function DesignPartnerSection() {
             <div className="space-y-3 mb-8 text-left max-w-md mx-auto">
               {content.designPartner.benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start space-x-3">
-                  <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-muted-foreground">{benefit}</span>
                 </div>
               ))}

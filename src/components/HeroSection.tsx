@@ -9,7 +9,7 @@ const HeroSection = () => {
       
       <div className="relative max-w-5xl mx-auto px-6 text-center">
         <div className="space-y-8 animate-slide-up">
-          <Badge variant="secondary" className="px-4 py-2 bg-card/50 border-primary/20 text-primary">
+          <Badge variant="secondary" className="px-4 py-2 bg-card/50 border-orange/30 text-orange">
             🚀 Overclock is in paid beta
           </Badge>
           

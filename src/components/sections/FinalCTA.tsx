@@ -22,7 +22,7 @@ const FinalCTA = () => {
           <Button size="lg" variant="hero" className="glow text-lg px-8 py-4">
             Get Early Access
           </Button>
-          <Button size="lg" variant="outline" className="border-primary/20 hover:border-primary/40">
+          <Button size="lg" variant="outline" className="border-primary/20 hover:border-orange hover:bg-orange hover:text-white transition-all duration-300">
             Book a Setup Call
           </Button>
         </div>
