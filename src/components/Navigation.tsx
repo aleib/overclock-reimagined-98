@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const Navigation = () => {
   const location = useLocation();
@@ -75,6 +76,7 @@ const Navigation = () => {
           </div>
 
           <div className="flex items-center space-x-4">
+            <ThemeToggle />
             <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
               Sign in
             </Button>
