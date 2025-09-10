@@ -301,7 +301,7 @@ const UseCasesTabs = () => {
 
           {/* Animation Demo */}
           <div 
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end min-h-[600px]"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
