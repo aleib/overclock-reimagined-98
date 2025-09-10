@@ -59,6 +59,17 @@ export const content = {
         ]
       }
     ]
+  },
+
+  designPartner: {
+    headline: "Get early access and help shape Overclock's future. Work directly with our team to customize agents for your specific needs.",
+    benefits: [
+      "Priority access to new features and skill packs",
+      "Direct line to our team for custom agent development", 
+      "50% off your first 3 months",
+      "Your feedback shapes the product roadmap"
+    ],
+    cta: "Apply for Design Partner"
   }
 } as const;
 
