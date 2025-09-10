@@ -89,14 +89,14 @@ const UseCasesTabs = () => {
     
     const interval = setInterval(() => {
       if (animationPhase === 0) {
-        // Show result for current use case
+        // Show result card alongside ask card
         setAnimationPhase(1);
       } else {
-        // Move to next use case and show ask
+        // Move to next use case and show ask only
         setActiveUseCase((prev) => (prev + 1) % useCases.length);
         setAnimationPhase(0);
       }
-    }, 3000);
+    }, animationPhase === 0 ? 2000 : 5000); // 2s for ask only, 5s for both visible
 
     return () => clearInterval(interval);
   }, [animationPhase, isHovered, useCases.length]);
@@ -110,110 +110,135 @@ const UseCasesTabs = () => {
     const currentUseCase = useCases[activeUseCase];
     
     if (animationPhase === 0) {
-      // Ask phase
+      // Ask phase - show only ask card on left
       return (
-        <motion.div
-          key="ask"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="bg-card border border-border rounded-xl p-6 shadow-lg max-w-lg mx-auto"
-        >
-          <div className="flex items-center space-x-3 mb-4">
-            <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-            <span className="text-sm text-muted-foreground">You're typing...</span>
-          </div>
-          <div className="text-foreground font-medium text-lg mb-4">
-            "{currentUseCase.ask}"
-          </div>
-          <div className="flex justify-end">
-            <Button size="sm" variant="default" className="text-sm">
-              Send <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-        </motion.div>
+        <div className="space-y-4">
+          <motion.div
+            key="ask-only"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            className="bg-card border border-border rounded-xl p-6 shadow-lg max-w-lg"
+          >
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+              <span className="text-sm text-muted-foreground">You're typing...</span>
+            </div>
+            <div className="text-foreground font-medium text-lg mb-4">
+              "{currentUseCase.ask}"
+            </div>
+            <div className="flex justify-end">
+              <Button size="sm" variant="default" className="text-sm">
+                Send <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+          </motion.div>
+        </div>
       );
     } else {
-      // Result phase
+      // Both phase - show ask on left, result below-right
       const result = currentUseCase.result;
       
       return (
-        <motion.div
-          key="result"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="bg-card border border-primary/20 rounded-xl p-6 shadow-lg max-w-lg mx-auto"
-        >
-          <div className="flex items-center space-x-3 mb-4">
-            <Check className="w-5 h-5 text-primary" />
-            <span className="text-sm font-medium text-primary">Complete!</span>
-          </div>
-          
-          {result.type === "slack" && (
-            <div className="space-y-3">
-              <div className="font-semibold text-foreground">{result.content.title}</div>
-              <div className="space-y-1">
-                {result.content.items.map((item, idx) => (
-                  <div key={idx} className="text-sm text-muted-foreground">{item}</div>
-                ))}
-              </div>
-              <div className="text-xs text-muted-foreground/70 mt-3">
-                {result.content.footer}
-              </div>
+        <div className="space-y-4 relative">
+          {/* Ask card - positioned on left */}
+          <motion.div
+            key="ask-persistent"
+            initial={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="bg-card border border-border rounded-xl p-6 shadow-lg max-w-lg"
+          >
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-3 h-3 bg-primary rounded-full"></div>
+              <span className="text-sm text-muted-foreground">You sent:</span>
             </div>
-          )}
-          
-          {result.type === "linkedin" && (
-            <div className="space-y-3">
-              <div className="text-sm font-medium text-muted-foreground">{result.content.title}</div>
-              <div className="space-y-2">
-                {result.content.posts.map((post, idx) => (
-                  <div key={idx} className="text-sm bg-muted/50 rounded-lg p-3 text-foreground">
-                    {post}
-                  </div>
-                ))}
-              </div>
+            <div className="text-foreground font-medium text-lg mb-4">
+              "{currentUseCase.ask}"
             </div>
-          )}
-          
-          {result.type === "metrics" && (
-            <div className="space-y-3">
-              <div className="font-semibold text-foreground">{result.content.title}</div>
-              <div className="grid grid-cols-2 gap-3">
-                {result.content.metrics.map((metric, idx) => (
-                  <div key={idx} className="text-center">
-                    <div className="text-lg font-bold text-foreground">{metric.value}</div>
-                    <div className="text-xs text-muted-foreground">{metric.label}</div>
-                    <div className="text-xs text-primary font-medium">{metric.change}</div>
-                  </div>
-                ))}
-              </div>
+            <div className="flex justify-end">
+              <Button size="sm" variant="outline" className="text-sm" disabled>
+                Sent <Check className="ml-2 h-4 w-4" />
+              </Button>
             </div>
-          )}
-          
-          {result.type === "leads" && (
-            <div className="space-y-3">
-              <div className="font-semibold text-foreground">{result.content.title}</div>
-              <div className="space-y-2">
-                {result.content.companies.map((company, idx) => (
-                  <div key={idx} className="flex justify-between items-center p-2 bg-muted/30 rounded-lg">
-                    <div>
-                      <div className="font-medium text-foreground text-sm">{company.name}</div>
-                      <div className="text-xs text-muted-foreground">{company.stage}</div>
+          </motion.div>
+
+          {/* Result card - positioned below and to the right */}
+          <motion.div
+            key="result-positioned"
+            initial={{ opacity: 0, y: 20, x: 50 }}
+            animate={{ opacity: 1, y: 0, x: 50 }}
+            className="bg-card border border-primary/20 rounded-xl p-6 shadow-lg max-w-lg ml-12"
+          >
+            <div className="flex items-center space-x-3 mb-4">
+              <Check className="w-5 h-5 text-primary" />
+              <span className="text-sm font-medium text-primary">Complete!</span>
+            </div>
+            
+            {result.type === "slack" && (
+              <div className="space-y-3">
+                <div className="font-semibold text-foreground">{result.content.title}</div>
+                <div className="space-y-1">
+                  {result.content.items.map((item, idx) => (
+                    <div key={idx} className="text-sm text-muted-foreground">{item}</div>
+                  ))}
+                </div>
+                <div className="text-xs text-muted-foreground/70 mt-3">
+                  {result.content.footer}
+                </div>
+              </div>
+            )}
+            
+            {result.type === "linkedin" && (
+              <div className="space-y-3">
+                <div className="text-sm font-medium text-muted-foreground">{result.content.title}</div>
+                <div className="space-y-2">
+                  {result.content.posts.map((post, idx) => (
+                    <div key={idx} className="text-sm bg-muted/50 rounded-lg p-3 text-foreground">
+                      {post}
                     </div>
-                    <div className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
-                      {company.funding}
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            {result.type === "metrics" && (
+              <div className="space-y-3">
+                <div className="font-semibold text-foreground">{result.content.title}</div>
+                <div className="grid grid-cols-2 gap-3">
+                  {result.content.metrics.map((metric, idx) => (
+                    <div key={idx} className="text-center">
+                      <div className="text-lg font-bold text-foreground">{metric.value}</div>
+                      <div className="text-xs text-muted-foreground">{metric.label}</div>
+                      <div className="text-xs text-primary font-medium">{metric.change}</div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-              <div className="text-xs text-muted-foreground/70 text-center">
-                {result.content.footer}
+            )}
+            
+            {result.type === "leads" && (
+              <div className="space-y-3">
+                <div className="font-semibold text-foreground">{result.content.title}</div>
+                <div className="space-y-2">
+                  {result.content.companies.map((company, idx) => (
+                    <div key={idx} className="flex justify-between items-center p-2 bg-muted/30 rounded-lg">
+                      <div>
+                        <div className="font-medium text-foreground text-sm">{company.name}</div>
+                        <div className="text-xs text-muted-foreground">{company.stage}</div>
+                      </div>
+                      <div className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
+                        {company.funding}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="text-xs text-muted-foreground/70 text-center">
+                  {result.content.footer}
+                </div>
               </div>
-            </div>
-          )}
-        </motion.div>
+            )}
+          </motion.div>
+        </div>
       );
     }
   };
