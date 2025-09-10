@@ -32,7 +32,7 @@ const About = () => {
         </section>
 
         {/* Who We Serve */}
-        <section className="py-16 px-6 bg-muted/30">
+        <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-12 text-center">Who We Serve</h2>
             <div className="grid md:grid-cols-2 gap-8">
