@@ -31,39 +31,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* What Overclock Is */}
-        <section className="py-16 px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">What Overclock Is</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-card/30 rounded-xl p-6 border border-primary/10">
-                <CheckCircle className="w-8 h-8 text-primary mb-4" />
-                <p className="text-muted-foreground">
-                  A no-code AI automation platform that runs in Slack and on the web
-                </p>
-              </div>
-              <div className="bg-card/30 rounded-xl p-6 border border-primary/10">
-                <Zap className="w-8 h-8 text-primary mb-4" />
-                <p className="text-muted-foreground">
-                  An AI agent builder that creates self-healing agents that retry, repair, and escalate
-                </p>
-              </div>
-              <div className="bg-card/30 rounded-xl p-6 border border-primary/10">
-                <Target className="w-8 h-8 text-primary mb-4" />
-                <p className="text-muted-foreground">
-                  Transparent logs and AI workflows you can review and refine
-                </p>
-              </div>
-              <div className="bg-card/30 rounded-xl p-6 border border-primary/10">
-                <Users className="w-8 h-8 text-primary mb-4" />
-                <p className="text-muted-foreground">
-                  Works with your tools via OAuth integrations
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Who We Serve */}
         <section className="py-16 px-6 bg-muted/30">
           <div className="max-w-4xl mx-auto">
