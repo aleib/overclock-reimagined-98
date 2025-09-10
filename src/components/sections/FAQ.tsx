@@ -48,6 +48,15 @@ const FAQ = () => {
             ))}
           </Accordion>
         </div>
+
+        <div className="text-center mt-8">
+          <a 
+            href="/FAQ"
+            className="text-primary hover:text-primary-glow transition-colors font-medium"
+          >
+            View all FAQs →
+          </a>
+        </div>
       </div>
     </section>
   );
