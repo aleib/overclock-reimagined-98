@@ -36,7 +36,7 @@ const Navigation = () => {
   return (
     <nav className={`fixed z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'top-4 left-1/2 transform -translate-x-1/2 w-auto' 
+        ? 'top-4 left-1/2 transform -translate-x-1/2 w-[800px]' 
         : 'top-0 left-0 right-0'
     }`}>
       <div className={`transition-all duration-300 ${
