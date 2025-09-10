@@ -105,7 +105,7 @@ const Pricing = () => {
         </div>
 
         <div className="text-center">
-          <div className="bg-primary/5 rounded-2xl p-6 border border-primary/20 max-w-2xl mx-auto">
+          <div className="bg-primary/5 rounded-2xl p-6 border border-primary/20 max-w-3xl mx-auto">
             <p className="text-primary font-medium">
               Invite-only during paid beta. Lock in early access pricing forever.
             </p>
