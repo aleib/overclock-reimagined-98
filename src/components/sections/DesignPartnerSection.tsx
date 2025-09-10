@@ -5,7 +5,7 @@ import { Sparkles } from "lucide-react";
 
 export function DesignPartnerSection() {
   return (
-    <section className="pb-16 bg-gradient-to-br from-primary/15 via-accent/10 to-secondary/15">
+    <section className="pb-16 bg-gradient-to-br from-primary/8 via-accent/5 to-secondary/8">
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -14,7 +14,7 @@ export function DesignPartnerSection() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto"
         >
-          <div className="bg-gradient-to-br from-primary/15 to-primary/25 rounded-lg p-8 lg:p-12 text-center shadow-xl border border-primary/30">
+          <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg p-8 lg:p-12 text-center shadow-lg border border-primary/20">
             <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
               <Sparkles className="w-8 h-8 text-accent-foreground" />
             </div>
