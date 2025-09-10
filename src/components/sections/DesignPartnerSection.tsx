@@ -5,7 +5,7 @@ import { Sparkles } from "lucide-react";
 
 export function DesignPartnerSection() {
   return (
-    <section className="py-16 bg-gradient-to-br from-primary/8 via-accent/5 to-secondary/8">
+    <section className="pb-16 bg-gradient-to-br from-primary/8 via-accent/5 to-secondary/8">
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
