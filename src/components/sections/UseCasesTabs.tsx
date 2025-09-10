@@ -233,7 +233,7 @@ const UseCasesTabs = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Interactive Tabs */}
           <div className="space-y-6">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-4">
               {useCases.map((useCase, index) => {
                 const Icon = useCase.icon;
                 return (
