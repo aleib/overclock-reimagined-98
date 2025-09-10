@@ -15,8 +15,8 @@ export function DesignPartnerSection() {
           className="max-w-3xl mx-auto"
         >
           <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg p-8 lg:p-12 text-center shadow-lg border border-primary/20">
-            <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-              <Sparkles className="w-8 h-8 text-primary-foreground" />
+            <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
+              <Sparkles className="w-8 h-8 text-accent-foreground" />
             </div>
             
             <div className="inline-block bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold mb-4">
