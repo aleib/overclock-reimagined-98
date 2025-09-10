@@ -28,7 +28,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-16 px-6 bg-card/20 border-t border-primary/10">
+    <footer className="py-16 px-6 bg-gradient-to-t from-card/40 via-muted/20 to-background border-t border-primary/10">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-1">
