@@ -19,7 +19,7 @@ export function DesignPartnerSection() {
               <Sparkles className="w-8 h-8 text-accent-foreground" />
             </div>
             
-            <div className="inline-block bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-block bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold mb-4">
               LIMITED OFFER
             </div>
             
