@@ -233,14 +233,14 @@ const UseCasesTabs = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Interactive Tabs */}
           <div className="space-y-6">
-            <div className="space-y-4">
+            <div className="flex flex-col space-y-4">
               {useCases.map((useCase, index) => {
                 const Icon = useCase.icon;
                 return (
                   <button
                     key={useCase.id}
                     onClick={() => handleTabClick(index)}
-                    className={`p-6 rounded-xl border-2 transition-all duration-300 text-left ${
+                    className={`w-full p-6 rounded-xl border-2 transition-all duration-300 text-left ${
                       activeUseCase === index
                         ? 'border-primary bg-primary/5 shadow-lg'
                         : 'border-border hover:border-primary/50 bg-card'
