@@ -10,7 +10,7 @@ const VideoSection = () => {
           Watch how marketing teams are delegating their busywork to AI and getting hours back every week.
         </p>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-5xl mx-auto">
           <div className="aspect-video w-full rounded-xl overflow-hidden shadow-2xl border border-primary/10">
             <iframe
               width="100%"
