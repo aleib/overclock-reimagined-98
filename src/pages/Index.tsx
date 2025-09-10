@@ -22,12 +22,7 @@ const Index = () => {
         <HeroSection />
         <VideoSection />
         <UseCasesTabs />
-        <SolutionOverview />
-        <HowItWorks />
-        <UseCases />
         <SocialProof />
-        <Differentiation />
-        <TeamCredibility />
         <Pricing />
         <FAQ />
         <FinalCTA />
