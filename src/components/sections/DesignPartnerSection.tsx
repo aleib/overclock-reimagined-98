@@ -14,7 +14,7 @@ export function DesignPartnerSection() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto"
         >
-          <div className="bg-gradient-to-br from-primary/20 to-accent/25 rounded-lg p-8 lg:p-12 text-center shadow-xl border border-primary/30 backdrop-blur-sm">
+          <div className="bg-accent/20 rounded-lg p-8 lg:p-12 text-center shadow-xl border border-primary/30 backdrop-blur-sm">
             <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
               <Sparkles className="w-8 h-8 text-accent-foreground" />
             </div>
