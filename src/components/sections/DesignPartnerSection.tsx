@@ -40,7 +40,7 @@ export function DesignPartnerSection() {
               ))}
             </div>
             
-            <Button variant="accent" size="lg">
+            <Button variant="default" size="lg">
               {content.designPartner.cta}
             </Button>
           </div>

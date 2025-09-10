@@ -57,17 +57,10 @@ const Pricing = () => {
               key={index}
               className={`relative bg-card/50 rounded-2xl p-8 border transition-all duration-300 hover:transform hover:scale-105 hover:shadow-glow ${
                 plan.popular 
-                  ? 'border-orange/40 shadow-glow' 
+                  ? 'border-primary/40 shadow-glow' 
                   : 'border-primary/10 hover:border-primary/20'
               }`}
             >
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-orange text-white px-3 py-1">
-                    Most Popular
-                  </Badge>
-                </div>
-              )}
               
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold mb-2 text-foreground">

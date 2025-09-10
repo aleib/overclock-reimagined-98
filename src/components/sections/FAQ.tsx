@@ -52,7 +52,7 @@ const FAQ = () => {
         <div className="text-center mt-8">
           <a 
             href="/FAQ"
-            className="text-orange hover:text-orange/80 transition-colors font-medium"
+            className="text-primary hover:text-primary-glow transition-colors font-medium"
           >
             View all FAQs →
           </a>
