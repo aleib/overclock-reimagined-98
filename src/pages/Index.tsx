@@ -22,8 +22,8 @@ const Index = () => {
       <main>
         <HeroSection />
         <VideoSection />
-        <UseCasesTabs />
         <SocialProof />
+        <UseCasesTabs />
         <Pricing />
         <DesignPartnerSection />
         <FAQ />
