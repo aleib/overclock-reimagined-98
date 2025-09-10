@@ -115,9 +115,10 @@ const UseCasesTabs = () => {
         <div className="space-y-4">
           <motion.div
             key="ask-only"
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
+            exit={{ opacity: 0, x: -30 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="bg-card border border-border rounded-xl p-6 shadow-lg max-w-lg"
           >
             <div className="flex items-center space-x-3 mb-4">
@@ -146,6 +147,7 @@ const UseCasesTabs = () => {
             key="ask-persistent"
             initial={{ opacity: 1, x: 0 }}
             animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="bg-card border border-border rounded-xl p-6 shadow-lg max-w-lg"
           >
             <div className="flex items-center space-x-3 mb-4">
@@ -165,8 +167,9 @@ const UseCasesTabs = () => {
           {/* Result card - positioned below and to the right */}
           <motion.div
             key="result-positioned"
-            initial={{ opacity: 0, y: 20, x: 50 }}
-            animate={{ opacity: 1, y: 0, x: 50 }}
+            initial={{ opacity: 0, x: 120 }}
+            animate={{ opacity: 1, x: 50 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             className="bg-card border border-primary/20 rounded-xl p-6 shadow-lg max-w-lg ml-12"
           >
             <div className="flex items-center space-x-3 mb-4">
