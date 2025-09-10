@@ -246,13 +246,15 @@ const UseCasesTabs = () => {
                         : 'border-border hover:border-primary/50 bg-card'
                     }`}
                   >
-                    <Icon className={`w-6 h-6 mb-3 ${
-                      activeUseCase === index ? 'text-primary' : 'text-muted-foreground'
-                    }`} />
-                    <div className={`font-semibold mb-2 ${
-                      activeUseCase === index ? 'text-primary' : 'text-foreground'
-                    }`}>
-                      {useCase.title}
+                    <div className="flex items-center space-x-3">
+                      <Icon className={`w-6 h-6 ${
+                        activeUseCase === index ? 'text-primary' : 'text-muted-foreground'
+                      }`} />
+                      <div className={`font-semibold ${
+                        activeUseCase === index ? 'text-primary' : 'text-foreground'
+                      }`}>
+                        {useCase.title}
+                      </div>
                     </div>
                   </button>
                 );
