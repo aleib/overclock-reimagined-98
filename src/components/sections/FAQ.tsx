@@ -26,7 +26,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-24 px-6 bg-card/20">
+    <section id="faq" className="py-24 px-6 bg-card/20">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">

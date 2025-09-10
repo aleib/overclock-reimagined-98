@@ -1,7 +1,26 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
+  const location = useLocation();
+
+  const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      // If not on homepage, navigate there first then scroll
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
+    
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start',
+        inline: 'nearest' 
+      });
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-4">
@@ -18,12 +37,18 @@ const Navigation = () => {
             <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">
               About
             </Link>
-            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+            <button 
+              onClick={() => scrollToSection('pricing')} 
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
               Pricing
-            </a>
-            <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors">
+            </button>
+            <button 
+              onClick={() => scrollToSection('faq')} 
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
               FAQ
-            </a>
+            </button>
             <a href="#docs" className="text-muted-foreground hover:text-foreground transition-colors">
               Docs
             </a>
