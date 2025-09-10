@@ -15,7 +15,7 @@ const SocialProof = () => {
         <div className="text-center mb-20">
           <div className="relative">
             <Quote className="w-16 h-16 text-primary/20 mx-auto mb-8" />
-            <blockquote className="text-3xl md:text-4xl font-bold text-foreground mb-8 leading-tight max-w-4xl mx-auto">
+            <blockquote className="text-2xl md:text-3xl font-bold text-foreground mb-8 leading-tight max-w-4xl mx-auto">
               "{mainTestimonial.quote}"
             </blockquote>
             <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
